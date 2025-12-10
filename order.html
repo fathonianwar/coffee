@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreetARTCoffee - Your Home of Premium Coffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.jpg" alt="CoffeeVille Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Pesan Online</a>
+                <a href="about.html">Tentang Kami</a>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-icon-count">0</span>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-header">
+            <h3>Keranjang Anda</h3>
+            <button id="cart-close-btn" class="cart-close-btn">&times;</button>
+        </div>
+        <div id="cart-items-list" class="cart-items-list">
+            </div>
+        <div class="cart-summary">
+            <p>Total: <span id="cart-total">Rp 0</span></p>
+            <button id="cart-checkout-btn" class="btn btn-primary" style="width: 100%;">Lanjut ke Pembayaran</button>
+        </div>
+    </div>
+
+    <main>
+    <section class="order-form-container">
+        <h2>☕ Form Pemesanan Online StreetARTCoffee</h2>
+        
+        <form id="order-form">
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">Nomor WhatsApp (Ex: 628123xxxxxx)</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required pattern="[0-9]+">
+            </div>
+            <div class="form-group">
+                <label for="address">Alamat Lengkap Pengantaran</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Pilihan Pengantaran</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="delivery_option" value="Delivery" checked> Delivery (Diantar)</label>
+                    <label><input type="radio" name="delivery_option" value="Pickup"> Pickup (Ambil Sendiri di Café)</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Catatan Pesanan (Ex: Kurangi gula, es terpisah)</label>
+                <textarea id="notes" name="notes" rows="2"></textarea>
+            </div>
+            
+            <h3>Ringkasan Pesanan</h3>
+            <table class="order-summary-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th style="width: 50px;">Qty</th>
+                        <th>Harga Satuan</th>
+                        <th style="text-align:right;">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="order-summary-body">
+                    </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="3">GRAND TOTAL</td>
+                        <td id="order-total-price" style="text-align:right;">Rp 0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="form-group" style="margin-top: 2rem;">
+                <label>Metode Pembayaran</label>
+                <div class="radio-group" style="flex-wrap: wrap; gap: 10px;">
+                    <label><input type="radio" name="payment_method" value="Cash" checked> Cash on Delivery</label>
+                    <label><input type="radio" name="payment_method" value="Transfer"> Transfer Bank (BCA/BRI/Mandiri)</label>
+                    <label><input type="radio" name="payment_method" value="E-Wallet"> E-Wallet (Dana/OVO/Gopay/Shopee)</label>
+                </div>
+            </div>
+            
+            <div id="payment-details" style="display: none;">
+                <h4>Detail Pembayaran Non-Tunai</h4>
+                <div id="payment-details-content">
+                    </div>
+            </div>
+            
+            <button href="invoice.html" type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Konfirmasi Pesanan</button>
+        </form>
+    </section>
+</main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>StreetARTCoffee</h4>
+                <p>DS.Sugihan,Dsn.Karang Anyar,RT.001 RW.003, Jatirogo.</p>
+                <p>&copy; 2024 StreetARTCoffee. All Rights Reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak Kami</h4>
+                <p>WhatsApp: +62 812-3456-7890</p>
+                <p>Email: info@streetartcoffee.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Ikuti Kami</h4>
+                <div class="social-media">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
