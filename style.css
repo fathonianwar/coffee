@@ -81,14 +81,29 @@ nav {
 /* --- Hero Section (Home) --- */
 .hero {
     background: url('img/hero-cafe.jpg') center/cover no-repeat;
-    height: 80vh;
+    height: 92vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
     position: relative;
+
+    /* --- TAMBAHKAN KODE DI BAWAH INI --- */
+    width: 100%;        /* Memastikan lebar 100% layar */
+    max-width: none;    /* Menghilangkan batasan 1200px */
+    margin: 0;          /* Menghilangkan margin otomatis */
+    padding: 0;         /* Menghilangkan padding agar foto benar-benar menempel ke tepi */
 }
+
+/* Pastikan konten di dalamnya tetap rapi */
+.hero-content {
+    z-index: 1;
+    padding: 2rem;      /* Memberi ruang agar teks tidak menempel ke pinggir layar HP */
+    width: 100%;
+    max-width: 1200px;  /* Konten teksnya saja yang dibatasi lebar agar tidak terlalu lebar di monitor besar */
+}
+
 
 .hero::before {
     content: '';
@@ -845,4 +860,5 @@ footer {
     .map-container {
         height: 300px; 
     }
+
 }
